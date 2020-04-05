@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      "flx-ui-datatable@1.1.3",
+      "E:\\Student Data\\11 May 2019\\Angular"
+    ]
+  ],
+  "_from": "flx-ui-datatable@1.1.3",
+  "_id": "flx-ui-datatable@1.1.3",
+  "_inBundle": false,
+  "_integrity": "sha512-FQto4uSTyHDdS8itMeB4U434QeFUSHofJEF+IjujDRoKyLKRVuMtvILqiwkDqOQfMTzZY+Lj5/pzK0yYDYNlyQ==",
+  "_location": "/flx-ui-datatable",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "flx-ui-datatable@1.1.3",
+    "name": "flx-ui-datatable",
+    "escapedName": "flx-ui-datatable",
+    "rawSpec": "1.1.3",
+    "saveSpec": null,
+    "fetchSpec": "1.1.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/flx-ui-datatable/-/flx-ui-datatable-1.1.3.tgz",
+  "_spec": "1.1.3",
+  "_where": "E:\\Student Data\\11 May 2019\\Angular",
+  "author": {
+    "name": "Felix K. Acheampong"
+  },
+  "bugs": {
+    "url": "https://github.com/FelixKAcheampong/flx-ui-datatable/issues"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "description": "## AUTHOR Felix Kakra Acheampong from (`Orcons Systems`) Ghana",
+  "es2015": "fesm2015/flx-ui-datatable.js",
+  "esm2015": "esm2015/flx-ui-datatable.js",
+  "esm5": "esm5/flx-ui-datatable.js",
+  "fesm2015": "fesm2015/flx-ui-datatable.js",
+  "fesm5": "fesm5/flx-ui-datatable.js",
+  "files": [
+    "README.md",
+    "lib/",
+    "esm5/",
+    "esm2015/",
+    "fesm5/",
+    "fesm2015/",
+    "flx-ui-datatable.d.ts",
+    "flx-ui-datatable.metadata.json",
+    "public_api.d.ts",
+    "bundles/"
+  ],
+  "homepage": "https://github.com/FelixKAcheampong/flx-ui-datatable#readme",
+  "keywords": [
+    "Angular",
+    "Datatable",
+    "flx-ui-datatable",
+    "Javascript"
+  ],
+  "license": "MIT",
+  "main": "bundles/flx-ui-datatable.umd.js",
+  "metadata": "flx-ui-datatable.metadata.json",
+  "module": "fesm5/flx-ui-datatable.js",
+  "name": "flx-ui-datatable",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelixKAcheampong/flx-ui-datatable.git"
+  },
+  "sideEffects": false,
+  "typings": "flx-ui-datatable.d.ts",
+  "version": "1.1.3"
+}

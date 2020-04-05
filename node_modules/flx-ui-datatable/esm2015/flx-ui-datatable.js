@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { FlxUiDataTable, FlxUiDatatableModule } from './public_api';
+export { Ceil as ɵd } from './lib/ceil.pipe';
+export { FlxUiDatatableComponent as ɵb, ImageFallBack as ɵc } from './lib/flx-ui-datatable.component';
+export { FlxUiDatatableService as ɵa } from './lib/flx-ui-datatable.service';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmx4LXVpLWRhdGF0YWJsZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2ZseC11aS1kYXRhdGFibGUvIiwic291cmNlcyI6WyJmbHgtdWktZGF0YXRhYmxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxxREFBYyxjQUFjLENBQUM7QUFFN0IsT0FBTyxFQUFDLElBQUksSUFBSSxFQUFFLEVBQUMsTUFBTSxpQkFBaUIsQ0FBQztBQUMzQyxPQUFPLEVBQUMsdUJBQXVCLElBQUksRUFBRSxFQUFDLGFBQWEsSUFBSSxFQUFFLEVBQUMsTUFBTSxrQ0FBa0MsQ0FBQztBQUNuRyxPQUFPLEVBQUMscUJBQXFCLElBQUksRUFBRSxFQUFDLE1BQU0sZ0NBQWdDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEdlbmVyYXRlZCBidW5kbGUgaW5kZXguIERvIG5vdCBlZGl0LlxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vcHVibGljX2FwaSc7XG5cbmV4cG9ydCB7Q2VpbCBhcyDJtWR9IGZyb20gJy4vbGliL2NlaWwucGlwZSc7XG5leHBvcnQge0ZseFVpRGF0YXRhYmxlQ29tcG9uZW50IGFzIMm1YixJbWFnZUZhbGxCYWNrIGFzIMm1Y30gZnJvbSAnLi9saWIvZmx4LXVpLWRhdGF0YWJsZS5jb21wb25lbnQnO1xuZXhwb3J0IHtGbHhVaURhdGF0YWJsZVNlcnZpY2UgYXMgybVhfSBmcm9tICcuL2xpYi9mbHgtdWktZGF0YXRhYmxlLnNlcnZpY2UnOyJdfQ==
