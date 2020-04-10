@@ -5,4 +5,5 @@ export class Student {
     lastName:String;
     email:String;
     branch=String;
+    phoneNumber=String;
 }

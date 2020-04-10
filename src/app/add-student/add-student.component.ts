@@ -21,14 +21,19 @@ export class AddStudentComponent implements OnInit {
   studentsaveform=new FormGroup({
     firstName:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
     email:new FormControl('',[Validators.required,Validators.email]),
+    phoneNumber:new FormControl(),
+    lastName:new FormControl(),
     branch:new FormControl()
+
   });
 
   saveStudent(saveStudent){
     this.student=new Student();
-    this.student.firstName=this.StudentName.value;
+    this.student.firstName=this.StudentFirstName.value;
+    this.student.lastName=this.StudentLastName.value;
     this.student.email=this.StudentEmail.value;
     this.student.branch=this.StudentBranch.value;
+    this.student.phoneNumber=this.StudentPhoneNumber.value;
     this.submitted = true;
     this.save();
   }
@@ -41,9 +46,12 @@ export class AddStudentComponent implements OnInit {
     this.student = new Student();
   }
 
-  get StudentName(){
+  get StudentFirstName(){
     return this.studentsaveform.get('firstName');
   }
+  get StudentLastName(){
+      return this.studentsaveform.get('lastName');
+    }
 
   get StudentEmail(){
     return this.studentsaveform.get('email');
@@ -52,6 +60,11 @@ export class AddStudentComponent implements OnInit {
   get StudentBranch(){
     return this.studentsaveform.get('branch');
   }
+
+  get StudentPhoneNumber(){
+  return this.studentsaveform.get('phoneNumber')
+  }
+
 
   addStudentForm(){
     this.submitted=false;

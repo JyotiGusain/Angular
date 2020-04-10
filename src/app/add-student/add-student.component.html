@@ -8,10 +8,10 @@
               <label for="name">First Name</label>
               <input type="text" class="form-control"  formControlName="firstName" data-toggle="tooltip"
                  data-placement="right" title="Enter Student First Name" >
-              <div class="alert alert-danger" *ngIf = "(StudentName.touched) && (StudentName.invalid)"
+              <div class="alert alert-danger" *ngIf = "(StudentFirstName.touched) && (StudentFirstName.invalid)"
                 style="margin-top: 5px;">
-                  <span *ngIf="StudentName.errors.required">Student First Name is Required</span>
-                    <span *ngIf = "StudentName.errors.minlength">
+                  <span *ngIf="StudentFirstName.errors.required">Student First Name is Required</span>
+                    <span *ngIf = "StudentFirstName.errors.minlength">
                         MinLength Error
                     </span>
                 </div>
@@ -21,15 +21,26 @@
           <label for="name">Last Name</label>
           <input type="text" class="form-control"  formControlName="lastName" data-toggle="tooltip"
                  data-placement="right" title="Enter Student Last Name" >
-          <div class="alert alert-danger" *ngIf = "(StudentName.touched) && (StudentName.invalid)"
+          <div class="alert alert-danger" *ngIf = "(StudentLastName.touched) && (StudentLastName.invalid)"
                style="margin-top: 5px;">
-            <span *ngIf="StudentName.errors.required">Student Last Name is Required</span>
-            <span *ngIf = "StudentName.errors.minlength">
+            <span *ngIf="StudentLastName.errors.required">Student Last Name is Required</span>
+            <span *ngIf = "StudentLastName.errors.minlength">
                         MinLength Error
                     </span>
           </div>
         </div>
-
+          <div class="form-group">
+              <label for="name">Phone Number</label>
+              <input type="text" class="form-control" formControlName="phoneNumber"
+                     data-toggle="tooltip" data-placement="right" title="Enter Student Phone Number">
+              <div class="alert alert-danger" *ngIf = "(StudentPhoneNumber.touched) && (StudentPhoneNumber.invalid)"
+                   style="margin-top: 5px;">
+                  <span *ngIf="StudentPhoneNumber.errors.required">Student Phone Number is Required</span>
+                  <span *ngIf = "StudentPhoneNumber.errors.phonenumber">
+                        Invalid Phone Number Format
+                    </span>
+              </div>
+          </div>
           <div class="form-group">
               <label for="name">Email Id</label>
               <input type="text" class="form-control" formControlName="email"
@@ -42,7 +53,6 @@
                     </span>
                 </div>
           </div>
-
           <div class="form-group">
               <label for="branch">Branch</label>
                 <select class="form-control" formControlName="branch" data-toggle="tooltip"

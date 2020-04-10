@@ -73,9 +73,11 @@ export class StudentListComponent implements OnInit {
   updateStu(updstu){
     this.student=new Student();
    this.student.id=this.StudentId.value;
-   this.student.firstName=this.StudentName.value;
+   this.student.firstName=this.StudentFirstName.value;
+   this.student.lastName=this.StudentLastName.value;
    this.student.email=this.StudentEmail.value;
    this.student.branch=this.StudentBranch.value;
+   this.student.phoneNumber=this.StudentPhoneNumber.value;
    console.log(this.StudentBranch.value);
 
 
@@ -89,9 +91,12 @@ export class StudentListComponent implements OnInit {
     error => console.log(error));
   }
 
-  get StudentName(){
+  get StudentFirstName(){
     return this.studentupdateform.get('firstName');
   }
+  get StudentLastName(){
+      return this.studentupdateform.get('lastName');
+    }
 
   get StudentEmail(){
     return this.studentupdateform.get('email');
@@ -103,6 +108,10 @@ export class StudentListComponent implements OnInit {
 
   get StudentId(){
     return this.studentupdateform.get('id');
+  }
+
+  get StudentPhoneNumber(){
+   return this.studentupdateform.get('phoneNumber');
   }
 
   changeisUpdate(){

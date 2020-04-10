@@ -25,6 +25,7 @@
                   <th> Last Name</th>
                   <th> Email Id</th>
                   <th> Branch</th>
+                  <th>Phone Number</th>
                   <th>Action</th>
 
               </tr>
@@ -36,6 +37,7 @@
                  <td>{{student.lastName}}</td>
                   <td>{{student.email}}</td>
                   <td>{{student.branch}}</td>
+                   <td>{{student.phoneNumber}}</td>
                   <td><button (click)="deleteStudent(student.id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
                     <button (click)="updateStudent(student.id)" class='btn btn-info'
                     data-toggle="modal" data-target="#myModal">Update</button>
@@ -75,6 +77,10 @@
                                 <label for="name">Email Id</label>
                                 <input type="text" class="form-control" formControlName="email" [(ngModel)]="student.email">
                             </div>
+                    <div class="form-group">
+                        <label for="name">Phone Number</label>
+                        <input type="text" class="form-control" formControlName="phoneNumber"[(ngModel)]="student.phoneNumber">
+                    </div>
 
                             <div class="form-group">
                                 <label for="name">Branch</label>
@@ -86,6 +92,7 @@
                                     <option value="B.sc" [selected]="'B.Sc' == student.branch">B.Sc</option>
                                   </select>
                             </div>
+
                   </div>
                   <div [hidden]="!isupdated">
                       <h4>Student Detail Updated!</h4>
