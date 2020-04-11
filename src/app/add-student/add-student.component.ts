@@ -9,7 +9,7 @@ import { Student } from '../student';
 })
 export class AddStudentComponent implements OnInit {
 
-  constructor(private studentservice:StudentService) { }
+  constructor(private studentService:StudentService) { }
 
   student : Student=new Student();
   submitted = false;
@@ -18,13 +18,12 @@ export class AddStudentComponent implements OnInit {
     this.submitted=false;
   }
 
-  studentsaveform=new FormGroup({
+  studentSaveForm=new FormGroup({
     firstName:new FormControl('' , [Validators.required , Validators.minLength(5) ] ),
     email:new FormControl('',[Validators.required,Validators.email]),
     phoneNumber:new FormControl(),
     lastName:new FormControl(),
     branch:new FormControl()
-
   });
 
   saveStudent(saveStudent){
@@ -41,33 +40,33 @@ export class AddStudentComponent implements OnInit {
 
 
   save() {
-    this.studentservice.createStudent(this.student)
+    this.studentService.createStudent(this.student)
       .subscribe(data => console.log(data), error => console.log(error));
     this.student = new Student();
   }
 
   get StudentFirstName(){
-    return this.studentsaveform.get('firstName');
+    return this.studentSaveForm.get('firstName');
   }
   get StudentLastName(){
-      return this.studentsaveform.get('lastName');
+      return this.studentSaveForm.get('lastName');
     }
 
   get StudentEmail(){
-    return this.studentsaveform.get('email');
+    return this.studentSaveForm.get('email');
   }
 
   get StudentBranch(){
-    return this.studentsaveform.get('branch');
+    return this.studentSaveForm.get('branch');
   }
 
   get StudentPhoneNumber(){
-  return this.studentsaveform.get('phoneNumber')
+  return this.studentSaveForm.get('phoneNumber')
   }
 
 
   addStudentForm(){
     this.submitted=false;
-    this.studentsaveform.reset();
+    this.studentSaveForm.reset();
   }
 }

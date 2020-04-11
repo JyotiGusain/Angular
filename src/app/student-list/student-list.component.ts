@@ -12,7 +12,7 @@ import {FormControl,FormGroup,Validators} from '@angular/forms';
 })
 export class StudentListComponent implements OnInit {
 
- constructor(private studentservice:StudentService) { }
+ constructor(private studentService:StudentService) { }
 
   studentsArray: any[] = [];
   dtOptions: DataTables.Settings = {};
@@ -22,31 +22,31 @@ export class StudentListComponent implements OnInit {
   students: Observable<Student[]>;
   student : Student=new Student();
   deleteMessage=false;
-  studentlist:any;
-  isupdated = false;
+  studentList:any;
+  isUpdated = false;
 
 
   ngOnInit() {
-    this.isupdated=false;
+    this.isUpdated=false;
     this.dtOptions = {
       pageLength: 6,
       stateSave:true,
       lengthMenu:[[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.studentservice.getStudentList().subscribe(data =>{
+    this.studentService.getStudentList().subscribe(data =>{
     this.students =data;
     this.dtTrigger.next();
     })
   }
 
   deleteStudent(id: number) {
-    this.studentservice.deleteStudent(id)
+    this.studentService.deleteStudent(id)
       .subscribe(
         data => {
           console.log(data);
           this.deleteMessage=true;
-          this.studentservice.getStudentList().subscribe(data =>{
+          this.studentService.getStudentList().subscribe(data =>{
             this.students =data
             })
         },
@@ -54,24 +54,22 @@ export class StudentListComponent implements OnInit {
   }
 
 
-  updateStudent(id: number){
-    this.studentservice.getStudent(id)
-      .subscribe(
-        data => {
-          this.studentlist=data
-        },
-        error => console.log(error));
+  editStudent(student){
+    this.isUpdated = false;
+    this.student=student;
   }
 
-  studentupdateform=new FormGroup({
+  studentUpdateForm=new FormGroup({
     id:new FormControl(),
     firstName:new FormControl(),
+    lastName:new FormControl(),
     email:new FormControl(),
-    branch:new FormControl()
+    branch:new FormControl(),
+    phoneNumber:new FormControl()
   });
 
-  updateStu(updstu){
-    this.student=new Student();
+  updateStudent(upStudent){
+   this.student=new Student();
    this.student.id=this.StudentId.value;
    this.student.firstName=this.StudentFirstName.value;
    this.student.lastName=this.StudentLastName.value;
@@ -80,41 +78,40 @@ export class StudentListComponent implements OnInit {
    this.student.phoneNumber=this.StudentPhoneNumber.value;
    console.log(this.StudentBranch.value);
 
-
-   this.studentservice.updateStudent(this.student.id,this.student).subscribe(
+   this.studentService.updateStudent(this.student.id, this.student).subscribe(
     data => {
-      this.isupdated=true;
-      this.studentservice.getStudentList().subscribe(data =>{
-        this.students =data
+      this.isUpdated = true;
+      this.studentService.getStudentList().subscribe(data =>{
+        this.students =data;
         })
     },
     error => console.log(error));
   }
 
   get StudentFirstName(){
-    return this.studentupdateform.get('firstName');
+    return this.studentUpdateForm.get('firstName');
   }
   get StudentLastName(){
-      return this.studentupdateform.get('lastName');
+      return this.studentUpdateForm.get('lastName');
     }
 
   get StudentEmail(){
-    return this.studentupdateform.get('email');
+    return this.studentUpdateForm.get('email');
   }
 
   get StudentBranch(){
-    return this.studentupdateform.get('branch');
+    return this.studentUpdateForm.get('branch');
   }
 
   get StudentId(){
-    return this.studentupdateform.get('id');
+    return this.studentUpdateForm.get('id');
   }
 
   get StudentPhoneNumber(){
-   return this.studentupdateform.get('phoneNumber');
+   return this.studentUpdateForm.get('phoneNumber');
   }
 
-  changeisUpdate(){
-    this.isupdated=false;
+  changeIsUpdate(){
+    this.isUpdated=false;
   }
 }

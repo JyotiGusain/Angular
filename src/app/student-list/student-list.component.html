@@ -12,6 +12,16 @@
                 </div>
                 <div class="col-sm-4"></div>
         </div>
+      <div class="row" [hidden]="!isUpdated">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+              <div class="alert alert-info alert-dismissible">
+                 <!-- <button type="button" class="close" data-dismiss="alert">&times;</button>-->
+                  <strong>Student Data Updated</strong>
+              </div>
+          </div>
+          <div class="col-sm-4"></div>
+      </div>
     </div>
 
 
@@ -39,8 +49,8 @@
                   <td>{{student.branch}}</td>
                    <td>{{student.phoneNumber}}</td>
                   <td><button (click)="deleteStudent(student.id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
-                    <button (click)="updateStudent(student.id)" class='btn btn-info'
-                    data-toggle="modal" data-target="#myModal">Update</button>
+                    <button (click)="editStudent(student)" class='btn btn-info'
+                    data-toggle="modal" data-target="#myModal">Edit</button>
                   </td>
                 </tr>
           </tbody><br>
@@ -49,42 +59,36 @@
 </div>
 
 <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-                <form [formGroup]="studentupdateform" #updstu (ngSubmit)="updateStu(updstu)">
+    <div class="modal-dialog">
+        <div class="modal-content" [hidden]="isUpdated">
+            <form [formGroup]="studentUpdateForm" #upStudent (ngSubmit)="updateStudent(upStudent)">
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title" style="text-align: center">Update Student</h4>
-
+              <h4 class="modal-title" style="text-align: center">Update Student for Id: {{student.id}}</h4>
             </div>
-
-            <!-- Modal body -->
-            <div class="modal-body" *ngFor="let student of studentlist " >
-                <div [hidden]="isupdated">
 
                     <input type="hidden" class="form-control"  formControlName="id" [(ngModel)]="student.id">
                             <div class="form-group">
                                 <label for="name">First Name</label>
-                                <input type="text" class="form-control"  formControlName="firstName" [(ngModel)]="student.firstName"  >
+                                <input type="text" class="form-control"  data-placement="right" formControlName="firstName" [(ngModel)]="student.firstName"  >
                             </div>
 
                          <div class="form-group">
                              <label for="name">Last Name</label>
-                            <input type="text" class="form-control"  formControlName="lastName" [(ngModel)]="student.lastName"  >
+                            <input type="text" class="form-control" data-placement="right"  formControlName="lastName" [(ngModel)]="student.lastName"  >
                           </div>
 
                             <div class="form-group">
                                 <label for="name">Email Id</label>
-                                <input type="text" class="form-control" formControlName="email" [(ngModel)]="student.email">
+                                <input type="text" class="form-control" data-placement="right" formControlName="email" [(ngModel)]="student.email">
                             </div>
                     <div class="form-group">
-                        <label for="name">Phone Number</label>
-                        <input type="text" class="form-control" formControlName="phoneNumber"[(ngModel)]="student.phoneNumber">
+                        <label for="name">Phone Number</label><input type="text" class="form-control"  data-placement="right" formControlName="phoneNumber"[(ngModel)]="student.phoneNumber">
                     </div>
 
                             <div class="form-group">
                                 <label for="name">Branch</label>
-                                  <select class="form-control" formControlName="branch" required>
+                                  <select class="form-control"  data-placement="right" formControlName="branch" required>
                                     <option value="B-Tech" [selected]="'B-Tech' == student.branch">B-Tech</option>
                                     <option value="BCA" [selected]="'BCA' == student.branch">BCA</option>
                                     <option value="MCA" [selected]="'MCA' == student.branch" >MCA</option>
@@ -92,21 +96,15 @@
                                     <option value="B.sc" [selected]="'B.Sc' == student.branch">B.Sc</option>
                                   </select>
                             </div>
-
-                  </div>
-                  <div [hidden]="!isupdated">
-                      <h4>Student Detail Updated!</h4>
-                  </div>
-
-            </div>
+          <!--  </div>-->
 
             <!-- Modal footer -->
             <div class="modal-footer" >
-              <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>
+              <button type="submit" class="btn btn-success" [hidden]="isUpdated">Update</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeIsUpdate()">Close</button>
             </div>
-
         </form>
+
           </div>
         </div>
       </div>

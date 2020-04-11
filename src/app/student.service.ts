@@ -29,7 +29,7 @@ export class StudentService {
   }
 
   updateStudent(id: number, value: any): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/${id}`, value);
+    return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
 }
